@@ -3,48 +3,84 @@
 document.addEventListener("DOMContentLoaded", () => {
   const bgMusic = document.getElementById("bgMusic");
   const musicControl = document.getElementById("musicControl");
+  const btnOpenInvitation = document.getElementById("btnOpenInvitation");
+  const invitationCover = document.getElementById("invitationCover");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  let isPlaying = false;
+  // Sinkronisasi status tombol animasi dengan audio asli
+  if (bgMusic && musicControl) {
+    bgMusic.addEventListener("play", () => {
+      musicControl.classList.add("playing");
+    });
+    bgMusic.addEventListener("pause", () => {
+      musicControl.classList.remove("playing");
+    });
+  }
 
-  // Fungsi toggle musik
+  // Fungsi toggle play / pause musik
   function toggleMusic() {
     if (!bgMusic) return;
 
-    if (isPlaying) {
-      bgMusic.pause();
-      musicControl.classList.remove("playing");
-      isPlaying = false;
-    } else {
-      bgMusic.play().then(() => {
-        musicControl.classList.add("playing");
-        isPlaying = true;
-      }).catch(err => {
-        console.log("Audio play dibatasi browser sampai ada interaksi:", err);
+    if (bgMusic.paused) {
+      bgMusic.play().catch(err => {
+        console.warn("Pemutaran audio dibatasi browser:", err);
       });
+    } else {
+      bgMusic.pause();
     }
   }
 
   if (musicControl) {
-    musicControl.addEventListener("click", toggleMusic);
+    musicControl.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleMusic();
+    });
   }
 
-  // Coba putar otomatis saat interaksi pertama pengguna jika audio tersedia
-  const startAudioOnFirstInteraction = () => {
-    if (!isPlaying && bgMusic && bgMusic.src) {
+  // Fungsi saat tombol "Buka Undangan" diklik
+  if (btnOpenInvitation && invitationCover) {
+    btnOpenInvitation.addEventListener("click", () => {
+      // 1. Putar musik langsung dari event klik resmi (100% diizinkan browser)
+      if (bgMusic && bgMusic.paused) {
+        bgMusic.play().catch(err => {
+          console.warn("Gagal memutar audio:", err);
+        });
+      }
+
+      // 2. Buka layar cover dengan animasi transisi
+      invitationCover.classList.add("opened");
+      document.body.classList.remove("cover-active");
+
+      // Hapus event listener interaksi tambahan
+      removeInteractionListeners();
+    });
+  }
+
+  // Backup: jika pengguna mengetuk/mengklik di area lain
+  function playAudioOnInteraction() {
+    if (bgMusic && bgMusic.paused) {
       bgMusic.play().then(() => {
-        musicControl.classList.add("playing");
-        isPlaying = true;
+        removeInteractionListeners();
       }).catch(() => {
-        // Abaikan jika browser belum mengizinkan
+        // Biarkan tetap aktif jika browser belum mengizinkan
       });
     }
-    document.removeEventListener("click", startAudioOnFirstInteraction);
-    document.removeEventListener("touchstart", startAudioOnFirstInteraction);
-  };
+  }
 
-  document.addEventListener("click", startAudioOnFirstInteraction);
-  document.addEventListener("touchstart", startAudioOnFirstInteraction);
+  function removeInteractionListeners() {
+    document.removeEventListener("click", playAudioOnInteraction);
+    document.removeEventListener("touchstart", playAudioOnInteraction);
+  }
+
+  document.addEventListener("click", playAudioOnInteraction);
+  document.addEventListener("touchstart", playAudioOnInteraction);
+
+  // Coba putar otomatis saat halaman dibuka (jika diizinkan pengaturan browser pengguna)
+  if (bgMusic) {
+    bgMusic.play().catch(() => {
+      // Browser modern biasanya memblokir autoplay tanpa klik, ini normal dan ditangani oleh tombol cover
+    });
+  }
 
   // Active Navbar link on scroll
   const sections = document.querySelectorAll("section[id]");
@@ -66,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Ganti placeholder dengan foto asli jika foto-bayi.jpg sudah dimasukkan
+  // Deteksi foto bayi
   const babyPhoto = document.getElementById("babyPhoto");
   if (babyPhoto) {
     const testImg = new Image();

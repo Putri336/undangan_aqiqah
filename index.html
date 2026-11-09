@@ -13,12 +13,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="cover-active">
 
     <!-- Background Music -->
-    <audio id="bgMusic" loop>
+    <audio id="bgMusic" src="lagu.mp3" preload="auto" loop>
         <source src="lagu.mp3" type="audio/mpeg">
     </audio>
+
+    <!-- Cover / Layar Pembuka "Buka Undangan" -->
+    <div class="invitation-cover" id="invitationCover">
+        <div class="cover-card">
+            <!-- Sparkles -->
+            <div class="sparkle-star star-1"></div>
+            <div class="sparkle-star star-2"></div>
+            <div class="sparkle-star star-3"></div>
+            <div class="sparkle-star star-4"></div>
+
+            <p class="cover-badge">TASYAKURAN & AQIQAH</p>
+
+            <div class="cover-photo">
+                <img src="img/foto-bayi.jpg" onerror="this.src='img/Khaira Aghniya.jpeg'" alt="Khaira Aghniya">
+            </div>
+
+            <p class="cover-greeting">Assalamu'alaikum Wr. Wb.</p>
+            <h1 class="cover-baby-name">Khaira Aghniya</h1>
+            <p class="cover-parents">Putri Kedua dari<br><strong>Wahidin & Riska Maryati</strong></p>
+
+            <button class="btn-open-invitation" id="btnOpenInvitation">
+                <span class="btn-icon">💌</span> Buka Undangan
+            </button>
+        </div>
+    </div>
 
     <!-- Music Control Button -->
     <button class="music-control" id="musicControl" aria-label="Putar musik">

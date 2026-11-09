@@ -63,6 +63,164 @@ body {
 }
 
 /* ==========================================================================
+   COVER / LAYAR PEMBUKA ("BUKA UNDANGAN")
+   Memungkinkan musik otomatis terputar 100% saat tombol diklik
+   ========================================================================== */
+body.cover-active {
+  overflow: hidden;
+}
+
+.invitation-cover {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: var(--stripe-1);
+  background-image: repeating-linear-gradient(
+    90deg,
+    #f6c4d9,
+    #f6c4d9 38px,
+    #fde3ee 38px,
+    #fde3ee 76px
+  );
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 14px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s;
+  visibility: visible;
+  opacity: 1;
+}
+
+.invitation-cover.opened {
+  opacity: 0;
+  transform: translateY(-40px) scale(0.98);
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.cover-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--white);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(160, 50, 95, 0.24);
+  border: var(--border-card);
+  text-align: center;
+  padding: 30px 22px 34px;
+  position: relative;
+  overflow: hidden;
+  animation: coverPopIn 0.8s ease-out;
+}
+
+@keyframes coverPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.cover-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f292b9 0%, #e676a0 100%);
+  color: #ffffff;
+  padding: 5px 22px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(230, 118, 160, 0.35);
+  margin-bottom: 16px;
+}
+
+.cover-photo {
+  width: 170px;
+  height: 215px;
+  margin: 0 auto 14px;
+  border-radius: 85px 85px 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 26px rgba(180, 70, 115, 0.25);
+  border: 4px solid #f8bad2;
+  background: #fdf2f7;
+}
+
+.cover-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 50%;
+  display: block;
+}
+
+.cover-greeting {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 2px;
+}
+
+.cover-baby-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.4rem;
+  color: var(--pink-dark);
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 2px 0 6px;
+}
+
+.cover-parents {
+  font-size: 0.85rem;
+  color: var(--text-main);
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.cover-parents strong {
+  color: var(--pink-dark);
+  font-weight: 700;
+}
+
+/* Tombol Buka Undangan */
+.btn-open-invitation {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, var(--pink-primary) 0%, #d85c8b 100%);
+  color: #ffffff;
+  border: none;
+  padding: 12px 34px;
+  border-radius: 30px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(228, 114, 159, 0.45);
+  transition: all 0.3s ease;
+  animation: pulseButton 2.4s infinite;
+}
+
+.btn-open-invitation:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 26px rgba(228, 114, 159, 0.6);
+}
+
+.btn-open-invitation:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.btn-open-invitation .btn-icon {
+  font-size: 1.15rem;
+}
+
+/* ==========================================================================
    NAVIGATION BAR
    ========================================================================== */
 .navbar {
