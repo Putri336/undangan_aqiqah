@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Aqiqah - Khaira Aghniya</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Button -->
+    <button class="music-control" id="musicControl" aria-label="Putar musik">
+        <span class="music-icon play-icon">▶</span>
+        <span class="music-icon pause-icon">⏸</span>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li>
+                    <a href="#beranda" class="nav-link active">Beranda</a>
+                </li>
+                <li>
+                    <a href="#lokasi" class="nav-link">Lokasi</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Invitation Card Container -->
+    <div class="container" id="beranda">
+
+        <!-- Soft Cloud Background Top -->
+        <div class="soft-cloud-bg"></div>
+
+        <!-- Corner Baby & Bottle Ornaments -->
+        <div class="card-ornament ornament-baby-top" title="Bayi Lucu"></div>
+        <div class="card-ornament ornament-bottle-top" title="Botol Susu"></div>
+        <div class="card-ornament ornament-bottle-bottom" title="Botol Susu"></div>
+        <div class="card-ornament ornament-baby-bottom" title="Bayi & Bola"></div>
+
+        <!-- Sparkle Stars -->
+        <div class="sparkle-star star-1"></div>
+        <div class="sparkle-star star-2"></div>
+        <div class="sparkle-star star-3"></div>
+        <div class="sparkle-star star-4"></div>
+        <div class="sparkle-star star-5"></div>
+        <div class="sparkle-star star-6"></div>
+
+        <!-- Top Header with TASYAKURAN DAN AQIQAH Badge -->
+        <div class="invitation-header">
+            <div class="badge-aqiqah">TASYAKURAN DAN AQIQAH</div>
+        </div>
+
+        <!-- Arched Baby Photo Frame -->
+        <section class="profile-section">
+            <div class="profile-photo">
+                <img id="babyPhoto" src="img/foto-bayi.jpg" onerror="this.src='img/Khaira Aghniya.jpeg'" alt="Foto Bayi Khaira Aghniya">
+            </div>
+        </section>
+
+        <!-- 3D Ribbon Banner for Baby's Name -->
+        <div class="ribbon-wrapper">
+            <div class="ribbon-banner">
+                <h1 class="baby-name">Khaira Aghniya</h1>
+            </div>
+        </div>
+
+        <!-- Home / Content Section -->
+        <section class="home-section">
+
+            <div class="content-wrapper">
+
+                <!-- Greeting Script -->
+                <p class="greeting">
+                    Assalamualaikum wr wb
+                </p>
+
+                <!-- Opening Message -->
+                <div class="message-box">
+                    <p class="message-line">
+                        Alhamdulillah puji syukur kehadirat Allah SWT, Sebagai ungkapan rasa syukur kami, bermaksud menyelenggarakan “Aqiqah” Anak/Cucu kami yang Insya Allah di selenggarakan pada
+                    </p>
+                    <p class="message-line">
+                    </p>
+                </div>
+
+                <!-- Event Details & Date Grid (2-Column Split) -->
+                <div class="event-section-grid">
+
+                    <!-- Kolom Kiri: Tanggal & Hari -->
+                    <div class="event-date-col">
+                        <div class="date-day-wrap">
+                            <span class="flourish-icon">❧</span>
+                            <span class="date-day-text">SENIN</span>
+                            <span class="flourish-icon">☙</span>
+                        </div>
+                        <div class="date-number">16</div>
+                        <div class="date-month">NOVEMBER</div>
+                        <div class="mini-year-ribbon">2026</div>
+                    </div>
+
+                    <!-- Garis Pemisah Vertikal -->
+                    <div class="event-divider"></div>
+
+                    <!-- Kolom Kanan: Detail Waktu, Lokasi & Orang Tua -->
+                    <div class="event-details-col">
+                        <div class="daughter-pill">
+                            Putri Kedua dari <span class="heart-icon">♡</span>
+                        </div>
+
+                        <div class="parent-names-block">
+                            <span>Wahidin</span>
+                            <span class="ampersand">&</span>
+                            <span>Riska Maryati</span>
+                        </div>
+
+                        <p class="event-spec">
+                            <strong>Pukul:</strong> 10.00 WITA
+                        </p>
+                        <p class="event-spec">
+                            <strong>Lokasi:</strong> Jl. R.E Martadinata, Tondo, Kota Palu
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Doa / Prayer Wish -->
+                <div class="prayer-box">
+                    <p class="prayer-quote">
+                        “Semoga ananda menjadi putri yang sholehah,<br>
+                        Sehat & cerdas yang kelak menjadi<br>
+                        Penyejuk pandangan bagi kedua<br>
+                        Orang tuanya”
+                    </p>
+                </div>
+
+                <!-- Closing Thank You & Wassalam -->
+                <div class="invitation-text">
+                    <p>Atas kehadiran Bapak/Ibu/Sdr/i, kami ucapkan terima kasih.</p>
+                    
+                    <p class="wassalam-script">
+                        Wassalamualaikum wr wb
+                    </p>
+
+                    <div class="family-signature">
+                        <p>Kami yang berbahagia</p>
+                        <strong>Hi. Ridwan (Hi. Ride) & Hi. Marwati</strong>
+                        <strong>Wahidin & Riska Maryati</strong>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Location Section with Google Maps -->
+        <section class="location-section" id="lokasi">
+
+            <h2 class="location-title">
+                📍 Lokasi Acara
+            </h2>
+
+            <div class="map-container">
+
+                <div class="map-wrapper">
+                    <!-- Lokasi Google Maps -->
+                    <iframe
+                        src="https://www.google.com/maps?q=-0.8506397,119.8828383&hl=id&z=17&output=embed"
+                        width="100%"
+                        height="100%"
+                        style="border: 0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Lokasi Acara Aqiqah">
+                    </iframe>
+                </div>
+
+                <div class="map-info">
+                    <p class="location-name">
+                        📍 Kios Anjeli
+                    </p>
+                    <p class="location-address">
+                        Jl. R.E Martadinata, Tondo, Kota Palu, Sulawesi Tengah
+                    </p>
+                </div>
+
+                <a
+                    href="https://maps.app.goo.gl/KoxnNMBHfJG9ZCJS6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="location-link">
+                    <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Buka di Google Maps
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

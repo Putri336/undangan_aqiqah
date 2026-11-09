@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 220" width="160" height="220">
+  <defs>
+    <linearGradient id="milkGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fff8db"/>
+      <stop offset="50%" stop-color="#fffef5"/>
+      <stop offset="100%" stop-color="#faecc0"/>
+    </linearGradient>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8a5c4"/>
+      <stop offset="50%" stop-color="#fbc4d8"/>
+      <stop offset="100%" stop-color="#f07fa8"/>
+    </linearGradient>
+    <linearGradient id="nippleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd59e"/>
+      <stop offset="100%" stop-color="#f7be7e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Nipple -->
+  <path d="M 65 52 C 65 30 72 20 80 20 C 88 20 95 30 95 52 Z" fill="url(#nippleGrad)" stroke="#c48c4a" stroke-width="2.5"/>
+  <path d="M 76 25 Q 80 22 84 25" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Bottle Cap Ring in Pink -->
+  <rect x="44" y="52" width="72" height="22" rx="6" fill="url(#capGrad)" stroke="#be5580" stroke-width="3"/>
+  <!-- Cap Grips/Ribs -->
+  <line x1="56" y1="55" x2="56" y2="71" stroke="#be5580" stroke-width="2" stroke-linecap="round"/>
+  <line x1="68" y1="55" x2="68" y2="71" stroke="#be5580" stroke-width="2" stroke-linecap="round"/>
+  <line x1="80" y1="55" x2="80" y2="71" stroke="#be5580" stroke-width="2" stroke-linecap="round"/>
+  <line x1="92" y1="55" x2="92" y2="71" stroke="#be5580" stroke-width="2" stroke-linecap="round"/>
+  <line x1="104" y1="55" x2="104" y2="71" stroke="#be5580" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Bottle Body Outer Glass (soft pink tint) -->
+  <path d="M 48 74 L 42 185 C 41 202 54 212 72 212 L 88 212 C 106 212 119 202 118 185 L 112 74 Z" fill="#fdf0f5" stroke="#df85a8" stroke-width="3.5" stroke-linejoin="round"/>
+
+  <!-- Milk Fill Inside -->
+  <path d="M 47 110 C 60 115 100 105 113 110 L 115 184 C 114 198 103 208 88 208 L 72 208 C 57 208 46 198 45 184 Z" fill="url(#milkGrad)"/>
+
+  <!-- Measurement Lines (Pink) -->
+  <line x1="54" y1="120" x2="68" y2="120" stroke="#e89cb8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="54" y1="138" x2="74" y2="138" stroke="#e89cb8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="54" y1="156" x2="68" y2="156" stroke="#e89cb8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="54" y1="174" x2="74" y2="174" stroke="#e89cb8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="54" y1="192" x2="68" y2="192" stroke="#e89cb8" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Sweet Pink Heart on Bottle -->
+  <path d="M 88 152 C 88 148 94 144 98 148 C 102 144 108 148 108 152 C 108 158 98 165 98 165 C 98 165 88 158 88 152 Z" fill="#ea7099" opacity="0.85"/>
+
+  <!-- Glass Highlight -->
+  <path d="M 108 82 L 105 180" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.7"/>
+</svg>

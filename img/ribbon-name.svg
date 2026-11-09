@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="ribbonPink" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f8a2c3"/>
+      <stop offset="50%" stop-color="#ea729d"/>
+      <stop offset="100%" stop-color="#d45785"/>
+    </linearGradient>
+    <linearGradient id="tailGradLeft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#b6446e"/>
+      <stop offset="100%" stop-color="#e56f9b"/>
+    </linearGradient>
+    <linearGradient id="tailGradRight" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e56f9b"/>
+      <stop offset="100%" stop-color="#b6446e"/>
+    </linearGradient>
+    <filter id="ribbonShadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#802047" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Left Tail Background Fold -->
+  <path d="M 45 42 L 85 42 L 85 85 L 45 85 Z" fill="#902a50"/>
+  <path d="M 85 42 L 5 28 L 28 62 L 5 95 L 85 82 Z" fill="url(#tailGradLeft)" filter="url(#ribbonShadow)"/>
+
+  <!-- Right Tail Background Fold -->
+  <path d="M 415 42 L 455 42 L 455 85 L 415 85 Z" fill="#902a50"/>
+  <path d="M 415 42 L 495 28 L 472 62 L 495 95 L 415 82 Z" fill="url(#tailGradRight)" filter="url(#ribbonShadow)"/>
+
+  <!-- Main Center Banner -->
+  <path d="M 65 24 Q 250 8 435 24 L 430 84 Q 250 102 70 84 Z" fill="url(#ribbonPink)" filter="url(#ribbonShadow)"/>
+
+  <!-- Ribbon Highlights -->
+  <path d="M 68 28 Q 250 12 432 28" stroke="#ffffff" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 72 80 Q 250 98 428 80" stroke="#902a50" stroke-width="2" fill="none" opacity="0.35"/>
+</svg>
