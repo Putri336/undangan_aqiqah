@@ -1266,3 +1266,45 @@ body.cover-active {
     align-self: center;
   }
 }
+
+/* ==========================================================================
+   FOOTER / CREATION CREDIT
+   ========================================================================== */
+.app-footer {
+  text-align: center;
+  padding: 16px 14px;
+  background: rgba(254, 241, 247, 0.7);
+  border-top: 1px dashed rgba(240, 148, 185, 0.4);
+}
+
+.app-footer p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.app-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--pink-primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.app-footer a:hover {
+  color: var(--pink-dark);
+  transform: translateY(-1px);
+}
+
+.app-footer .ig-icon {
+  width: 15px;
+  height: 15px;
+  stroke: currentColor;
+}
